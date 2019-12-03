@@ -1,0 +1,31 @@
+_schema-version: 2.0.0
+ID: products
+version: 1.0.0
+modules:
+  - name: products-db
+    type: hdb
+    path: db
+    parameters:
+      memory: 256M
+      disk-quota: 256M
+    requires:
+      - name: products-db-hdi-container
+  - name: products-srv
+    type: nodejs
+    path: srv
+    parameters:
+      memory: 512M
+      disk-quota: 512M
+    provides:
+      - name: srv_api
+        properties:
+          url: ${default-url}
+    requires:
+      - name: products-db-hdi-container
+resources:
+  - name: products-db-hdi-container
+    type: com.sap.xs.hdi-container
+    properties:
+      hdi-container-name: ${service-name}
+    parameters:
+      service: hanatrial   

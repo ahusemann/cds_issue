@@ -1,0 +1,23 @@
+{
+    "name": "project-srv",
+    "version": "1.0.0",
+    "dependencies": {
+        "@sap/cds": "^3.16.3",
+        "@sap/hana-client": "^2.4.144",
+        "express": "^4.17.1"
+    },
+    "engines": {
+        "node": "^10"
+    },
+    "scripts": {
+        "start": "node --inspect server.js"
+    },
+    "cds": {
+        "requires": {
+            "db": {
+                "kind": "hana",
+                "model": "gen/csn.json"
+            }
+        }
+    }
+}
