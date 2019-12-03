@@ -10,7 +10,7 @@
         "node": "^10"
     },
     "scripts": {
-        "start": "node --inspect server.js"
+        "start": "cds serve gen/csn.json"
     },
     "cds": {
         "requires": {

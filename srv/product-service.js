@@ -8,7 +8,7 @@ module.exports = async (srv) => {
     const { product } = req.data;
     const tx = cds.transaction(req)
     const products = await tx.run(SELECT().from(Products).where({ ID: product}));
-    if (products[0])
-      console.log(Object.keys(products[0]));
+    if (!products[0].hierarchyNode_ID)
+      req.reject(400, 'hierarchyNode_ID does not exist');
   })
 }
