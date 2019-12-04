@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "2ef8b575-1837-4737-96a1-2028b1afa253",
+		"name": "cds_issue_local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:4004/product/check",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"product\" : \"2bc690f8-4cef-4c22-8213-20940e303653\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4004/product/check",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"product",
+						"check"
+					]
+				},
+				"description": "Postman check call"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
